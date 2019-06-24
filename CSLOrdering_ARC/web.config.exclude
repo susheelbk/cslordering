@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=169433
+  -->
+<configuration>
+  <appSettings>
+    <add key="VATRate" value="0.20"/>
+    <add key="smtphost" value="cluster-ab.mailcontrol.com"/>
+    <add key="OrdersEmailFrom" value="admin@csldual.com"/>
+    <add key="LogisticsEmail" value="ravi@csldual.com"/>
+    <add key="EmailCC" value="ravi@csldual.com"/>
+    <add key="legacydb" value="data/csldual_data_file.mdb"/>
+  </appSettings>
+  <connectionStrings>
+    <add name="CSL_LoginSystem" connectionString="Data Source=DUALCOMWEB02\SQLEXPRESS;Initial Catalog=CSLOrderingTest;User ID=sa;Password=m3g4stream;MultipleActiveResultSets=True" providerName="System.Data.SqlClient"/>
+    <add name="ARC_OrderingConnectionString" connectionString="Data Source=DUALCOMWEB02\SQLEXPRESS;Initial Catalog=ARC_Ordering_Copy;User ID=sa;Password=m3g4stream;MultipleActiveResultSets=True" providerName="System.Data.SqlClient"/>
+    <add name="CSLOrderingARCBAL.Properties.Settings.ARC_OrderingConnectionString" connectionString="Data Source=DUALCOMWEB02\SQLEXPRESS;Initial Catalog=ARC_Ordering_Copy;User ID=sa;Password=m3g4stream;MultipleActiveResultSets=True" providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+  <system.web>
+    <httpHandlers>
+      <add path="Reserved.ReportViewerWebControl.axd" verb="*" type="Microsoft.Reporting.WebForms.HttpHandler, Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" validate="false"/>
+    </httpHandlers>
+    <customErrors mode="Off">
+      <error redirect="~/ErrorPage.aspx" statusCode="502"/>
+    </customErrors>
+    <!--<identity impersonate="true" />-->
+    <httpRuntime requestValidationMode="2.0"/>
+    <compilation debug="true" targetFramework="4.0">
+      <assemblies>
+        <add assembly="System.Data.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+        <add assembly="Microsoft.Build.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A"/>
+        <add assembly="System.Management, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A"/>
+        <add assembly="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+      </assemblies>
+      <buildProviders>
+        <add extension=".rdlc" type="Microsoft.Reporting.RdlBuildProvider, Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
+      </buildProviders>
+    </compilation>
+    <authentication mode="Forms">
+      <forms name=".ASPNET" timeout="2880"/>
+    </authentication>
+    <membership defaultProvider="SqlProvider" userIsOnlineTimeWindow="15">
+      <providers>
+        <clear/>
+        <add name="SqlProvider" type="System.Web.Security.SqlMembershipProvider" connectionStringName="CSL_LoginSystem" enablePasswordRetrieval="true" enablePasswordReset="true" requiresQuestionAndAnswer="true" requiresUniqueEmail="false" maxInvalidPasswordAttempts="5" minRequiredPasswordLength="6" minRequiredNonalphanumericCharacters="0" passwordAttemptWindow="10" applicationName="CSLWeb" passwordFormat="Clear"/>
+      </providers>
+    </membership>
+    <profile automaticSaveEnabled="true" defaultProvider="SqlProvider" enabled="false">
+      <providers>
+        <clear/>
+        <add name="SqlProvider" type="System.Web.Profile.SqlProfileProvider" connectionStringName="CSL_LoginSystem" applicationName="CSLWeb"/>
+      </providers>
+    </profile>
+    <roleManager enabled="true">
+      <providers>
+        <clear/>
+        <add connectionStringName="CSL_LoginSystem" applicationName="CSLWeb" name="AspNoleProvider" type="System.Web.Security.SqlRoleProvider"/>
+        <add applicationName="CSLWeb" name="AspNetWindowsTokenRoleProvider" type="System.Web.Security.WindowsTokenRoleProvider"/>
+      </providers>
+    </roleManager>
+    <pages maintainScrollPositionOnPostBack="true" validateRequest="false" clientIDMode="AutoID"/>
+  </system.web>
+  <system.webServer>
+    <modules runAllManagedModulesForAllRequests="true"/>
+    <validation validateIntegratedModeConfiguration="false"/>
+    <handlers>
+      <add name="ReportViewerWebControlHandler" preCondition="integratedMode" verb="*" path="Reserved.ReportViewerWebControl.axd" type="Microsoft.Reporting.WebForms.HttpHandler, Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
+    </handlers>
+  </system.webServer>
+  <system.net>
+    <mailSettings>
+      <smtp from="web@csldual.com">
+        <!--<network host="cluster-ab.mailcontrol.com" password="mumba1" userName="administrator@87.84.219.35.co.uk"/>-->
+        <network host="dualcomexg01.dualcom.co.uk"/>
+      </smtp>
+    </mailSettings>
+  </system.net>
+  <location path="TermsAndConditions">
+    <system.web>
+      <authorization>
+        <allow roles="ARC_Manager,ARC_Admin"/>etSqlR
+        <deny users="*"/>
+      </authorization>
+    </system.web>
+  </location>
+  <!--<location path="Admin">
+    <system.web>
+      <authorization>
+        <allow roles="ARCWebSite_Admin"/>
+        <deny users="*"/>
+      </authorization>
+    </system.web>
+  </location>-->
+  <!--<location path="Admin/ViewOrders.aspx">
+    <system.web>
+      <authorization>
+        <allow roles="ARCWebSite_SuperAdmin,ARCWebSite_MarketingAdmin"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="Admin/ManageUser.aspx">
+    <system.web>
+      <authorization>
+        <allow roles="ARCWebSite_SuperAdmin,ARCWebSite_MarketingAdmin"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="Admin/ManageARC.aspx">
+    <system.web>
+      <authorization>
+        <allow roles="ARCWebSite_SuperAdmin"/>
+        <deny roles="ARCWebSite_MarketingAdmin,ARC_Manager,ARC_Admin"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="Admin/ManageProduct.aspx">
+    <system.web>
+      <authorization>
+        <allow roles="ARCWebSite_SuperAdmin"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="Admin/ManageProductCategory.aspx">
+    <system.web>
+      <authorization>
+        <allow roles="ARCWebSite_SuperAdmin"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="Admin/ManageDelivery.aspx">
+    <system.web>
+      <authorization>
+        <allow roles="ARCWebSite_SuperAdmin"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="Admin/ManageCategory.aspx">
+    <system.web>
+      <authorization>
+        <allow roles="ARCWebSite_SuperAdmin"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="Admin/Manage.aspx">
+    <system.web>
+      <authorization>
+        <allow roles="ARCWebSite_SuperAdmin"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="Admin/ManageARCProductPrice.aspx">
+    <system.web>
+      <authorization>
+        <allow roles="ARCWebSite_SuperAdmin"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="Admin/ManageOptions.aspx">
+    <system.web>
+      <authorization>
+        <allow roles="ARCWebSite_SuperAdmin"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="Admin/ManageProductGrade.aspx">
+    <system.web>
+      <authorization>
+        <allow roles="ARCWebSite_SuperAdmin"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="Admin/ManageAppSetting.aspx">
+    <system.web>
+      <authorization>
+        <allow roles="ARCWebSite_SuperAdmin"/>
+      </authorization>
+    </system.web>
+  </location>
+  <location path="Admin/ManageARC_AccessCode.aspx">
+    <system.web>
+      <authorization>
+        <allow roles="ARCWebSite_SuperAdmin"/>
+      </authorization>
+    </system.web>
+  </location>-->
+</configuration>

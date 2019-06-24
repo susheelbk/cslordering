@@ -1,0 +1,123 @@
+﻿
+.DropDownLook,
+.DropDownLook2,
+.DropDownLook3,
+.DropDownLook4,
+.DropDownLook5
+
+{
+	padding:0px;
+}
+
+.DivClose,
+.DivClose2,
+.DivClose3,
+.DivClose4,
+.DivClose5
+
+
+{
+	display:none;
+	position:absolute;
+	width:360px;
+	height:220px;
+	border-style:solid;
+	border-color:Gray; 
+	border-width:1px;
+	background-color:#99A479;
+	clear: both;
+}
+
+.CheckBoxList td label,
+.CheckBoxList td label2,
+.CheckBoxList td label3,
+.CheckBoxList td label4,
+.CheckBoxList td Label5 
+
+{
+    white-space: nowrap;
+}
+
+.LabelClose,
+.LabelClose2,
+.LabelClose3,
+.LabelClose4,
+.LabelClose5
+
+{
+	vertical-align:text-top; 
+	position:absolute;
+	bottom:0px;
+	font-family:Verdana;
+	display: block;
+	text-align: center;
+	padding: 0 0 2px 0;
+	width: 360px;
+}
+
+.DivCheckBoxList,
+.DivCheckBoxList2,
+.DivCheckBoxList3,
+.DivCheckBoxList4,
+.DivCheckBoxList5
+
+
+{
+	display:none;
+	background-color:White;
+	width:340px;
+	padding: 0 10px;
+	position:absolute;
+	height:200px;
+	overflow-y:auto; 
+	overflow-x:hidden;
+	border-style:solid;
+	border-color:Gray; 
+	border-width:1px;
+}
+
+.CheckBoxList,
+.CheckBoxList2,
+.CheckBoxList3,
+.CheckBoxList4,
+.CheckBoxList5
+
+{
+	position:relative;
+	width:250px;
+	height:10px; 
+	overflow:scroll;
+	font-size:small;
+}
+
+.collapsePanelHeader900
+{
+    width: 905px;
+    height: 25px;
+    background-image: url(ABCBar.png);
+    
+    font-weight: bold;
+}
+
+.Trackerbutton
+{
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border:1px solid #808080 ;	
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-family:arial, helvetica, sans-serif;
+	padding: 5px 5px;	
+	font-weight:bold;
+	text-align: center;
+	color: #ffffff;
+	background:#808080;
+}
+
+.Trackerbutton:hover
+{
+	border: 1px solid #B0B0B0;
+	background:#B0B0B0;
+	color: black;	
+}

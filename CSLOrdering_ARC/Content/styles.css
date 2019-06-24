@@ -1,0 +1,116 @@
+.wf-loading {
+  visibility: hidden;
+  opacity: 0;
+}
+.wf-inactive {
+  visibility: visible;
+  opacity: 1;
+}
+#header-main {
+  font-size: 13px;
+  font-weight: 300;
+  font-family: "museo-sans", Arial, Helvetica, Sans-serif;
+  background: #ffffff;
+  color: #637b7b;
+}
+#header-main .clearfix {
+  zoom: 1;
+}
+#header-main .clearfix:before,
+#header-main .clearfix:after {
+  content: "";
+  display: table;
+}
+#header-main .clearfix:after {
+  clear: both;
+}
+#header-main .list-default {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#header-main .list-default li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#header-main .container {
+  width: 960px;
+  margin: 0 auto;
+}
+#header-main p {
+  margin: 0 0 20px 0;
+}
+#header-main strong {
+  font-weight: 500;
+}
+#header-main a {
+  color: #3c4e59;
+  text-decoration: none;
+  cursor: pointer;
+}
+#header-main a:active {
+  background-color: transparent;
+}
+#header-main a:hover {
+  color: #516977;
+}
+#header-main a:active,
+#header-main a:focus {
+  color: #516977;
+  border: 0 none;
+  outline: 0 none;
+}
+#header-main ::selection {
+  background: rgba(227, 31, 19, 0.35);
+}
+#header-main ::-moz-selection {
+  background: rgba(227, 31, 19, 0.35);
+}
+#header-main {
+  padding: 40px 0 35px 0;
+  background: #ffffff;
+}
+#header-main #logo {
+  width: 185px;
+  height: 62px;
+  float: left;
+  display: block;
+  background-image: url('../images/logo.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+#header-main #nav-primary {
+  float: right;
+  line-height: 62px;
+  text-align: right;
+}
+#header-main #nav-primary ul.list-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#header-main #nav-primary ul.list-nav li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#header-main #nav-primary ul.list-nav li {
+  margin-right: 30px;
+  display: inline-block;
+  font-weight: 500;
+  text-transform: uppercase;
+  position: relative;
+}
+#header-main #nav-primary ul.list-nav li:last-child {
+  margin-right: 0;
+}
+#header-main #nav-primary ul.list-nav li a:hover,
+#header-main #nav-primary ul.list-nav li.active a {
+  color: #e31f13;
+}
+#header-main #nav-primary ul.list-nav li.caret {
+  margin-right: 18px;
+  padding-right: 12px;
+  background: url('../images/icon-caret.svg') center right no-repeat;
+}

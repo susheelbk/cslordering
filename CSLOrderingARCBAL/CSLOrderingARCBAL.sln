@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSLOrderingARCBAL", "CSLOrderingARCBAL\CSLOrderingARCBAL.csproj", "{EBAC5F72-F56D-4653-AFAD-0C2E3F3F54ED}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CSLOrdering_ARC", "..\CSLOrdering_ARC\", "{0A510D9A-AB78-4B67-BCF8-C6F6E2F49C00}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{ebac5f72-f56d-4653-afad-0c2e3f3f54ed}|CSLOrderingARCBAL.dll;{a2494f3b-d0d4-44d7-97d1-0e4ffa31e34f}|Emizon.APIModels.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/CSLOrdering_ARC"
+		Debug.AspNetCompiler.PhysicalPath = "..\CSLOrdering_ARC\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\CSLOrdering_ARC\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/CSLOrdering_ARC"
+		Release.AspNetCompiler.PhysicalPath = "..\CSLOrdering_ARC\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\CSLOrdering_ARC\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "53347"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSLOrderingARCBALTestsMS", "CSLOrderingARCBALTestsMS\CSLOrderingARCBALTestsMS.csproj", "{03311AFA-9DFD-4A05-9E97-47ED6EB4A237}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emizon.APIModels", "..\..\..\..\..\Applications\CSL.Emizon.QueueProcess\trunk\Emizon.APIModels\Emizon.APIModels.csproj", "{A2494F3B-D0D4-44D7-97D1-0E4FFA31E34F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBAC5F72-F56D-4653-AFAD-0C2E3F3F54ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBAC5F72-F56D-4653-AFAD-0C2E3F3F54ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBAC5F72-F56D-4653-AFAD-0C2E3F3F54ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBAC5F72-F56D-4653-AFAD-0C2E3F3F54ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A510D9A-AB78-4B67-BCF8-C6F6E2F49C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A510D9A-AB78-4B67-BCF8-C6F6E2F49C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A510D9A-AB78-4B67-BCF8-C6F6E2F49C00}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A510D9A-AB78-4B67-BCF8-C6F6E2F49C00}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{03311AFA-9DFD-4A05-9E97-47ED6EB4A237}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03311AFA-9DFD-4A05-9E97-47ED6EB4A237}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03311AFA-9DFD-4A05-9E97-47ED6EB4A237}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03311AFA-9DFD-4A05-9E97-47ED6EB4A237}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2494F3B-D0D4-44D7-97D1-0E4FFA31E34F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2494F3B-D0D4-44D7-97D1-0E4FFA31E34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2494F3B-D0D4-44D7-97D1-0E4FFA31E34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2494F3B-D0D4-44D7-97D1-0E4FFA31E34F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

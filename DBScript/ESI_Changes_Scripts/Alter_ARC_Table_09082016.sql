@@ -1,0 +1,3 @@
+ALTER TABLE dbo.ARC
+ADD IsARCAllowedForBranch BIT NOT NULL DEFAULT 0
+    

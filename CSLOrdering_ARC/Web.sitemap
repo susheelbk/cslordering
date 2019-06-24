@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/Categories.aspx" title="Categories"  description="Select a category to make an online order">
+        <siteMapNode url="~/ProductList.aspx?CategoryId=1" title="DualCom Gradeshift® UDL Range"  description="Select the product from the Calibre Range category" />
+        <siteMapNode url="~/ProductList.aspx?CategoryId=2" title="CSL Communications Limited"  description="Select the product from the CSL Connect category" />
+        <siteMapNode url="~/ProductList.aspx?CategoryId=3" title="DualCom Gradeshift® Range"  description="Select the product from the CSL Connect category" />
+        <siteMapNode url="~/ProductList.aspx?CategoryId=5" title="DualCom Inside®"  description="Select the product from the CSL Connect category" />
+        <siteMapNode url="~/ProductList.aspx?CategoryId=6" title="DualCom DigiPlus®"  description="Select the product from the CSL Connect category" />
+        <siteMapNode url="~/ProductList.aspx?CategoryId=7" title="DualCom Gradeshift® Range"  description="Select the product from the CSL Connect category" />
+
+
+        <siteMapNode url="~/Basket.aspx" title="Basket"  description="Enter the product details">
+            <siteMapNode url="~/SelectInstaller.aspx" title="Select Installer"  description="Select an installer from the available list">
+                <siteMapNode url="~/Checkout.aspx" title="Checkout"  description="Confirm the order" />
+            </siteMapNode>
+        </siteMapNode>
+        <siteMapNode url="~/OrderConfirmation.aspx" title="Order Confirmation"  description="Your order has been confirmed" />
+    </siteMapNode>
+</siteMap>

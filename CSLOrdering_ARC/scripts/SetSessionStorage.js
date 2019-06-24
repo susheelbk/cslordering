@@ -1,0 +1,1 @@
+﻿sessionStorage.lTime = new Date, localStorage.lTime = new Date;

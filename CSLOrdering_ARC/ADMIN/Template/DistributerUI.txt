@@ -1,0 +1,211 @@
+﻿  <!-- Navigation -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img src="{HeaderImage}" alt="..."></a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden-sm">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="hidden-sm">
+                        <a href="#">Activate</a>
+                    </li>
+                    <li class="hidden-sm">
+                        <a href="#">Buy</a>
+                    </li>
+
+
+                    <li class="hidden-sm">
+                            <a href='#'  id="signIn">Sign In</a>
+                                            </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+    <!-- / .navigation -->
+
+    
+    
+<div class="wrapper">
+
+    <div class="topic">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>Sign In</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End of Topic Header -->
+
+<div id="body">
+    <div class="container">
+        <div class="row">
+            <div class="row">
+                <div class="col-md-12 col-sm-12" style="padding-top: 40px;">
+                    <div style="float: left; width: 70%" class="hidden-xs">
+                        <img src="{MainImage}" width="90%" />
+                    </div>
+                    <div style="float: left; width: 30%" class="hidden-xs">
+                        <div class="col-md-offset-1 col-sm-offset-1" style="float: left; width: 100%">
+                            <div>
+
+                                <!--Error Msg -->
+                                <div class="form-group has-error">
+                                    <span class="help-block" id="errormsg" data-bind="text: AjaxErrorMessage"></span>
+                                </div>
+                                
+<form action="/Homeye" method="post"><input name="__RequestVerificationToken" type="hidden" value="xXDhxVsv1bPxGHCJe4F_oisYGp-LmU4ecH9i0U2kfuGn4mewR-x8SCQ3rwLMd_gF9dn38m3unp34XEksAeO7ur2D4bgOgcTMeg2N8Xr2-oA1" />                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        <input type="text" title="" data-original-title="" placeholder="UserName" autofocus="autofocus" class="form-control" data-bind="value: UserName">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                        <input type="password" title="" data-original-title="" placeholder="Password" class="form-control" data-bind="value: Password">
+                                    </div>
+                                    <br />
+                                   <input type="button" id="btnSub" value="Sign In" style="background-color:{SignInButtoncolor};" />  
+                                   <!-- <img data-bind="visible: DisplayAjaxIndicator" class="" src="/Images/ajax-loader.gif" />-->
+</form>                                
+                                <br />
+                                <p>Not registered? <a href='#'><span style="color:{SignUpHyperLinkColor}">Create an account.</span></a></p>
+                                <div class="pwd-lost">
+                                    <div>Lost your password? <a href="#" target="_blank"><span style="color:{SignUpHyperLinkColor}">Click here to recover.</span></span></a></div>
+                                </div>
+                                <!-- / .pwd-lost -->
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float: left; width: 100%" class="hidden-xs">
+                        <br />
+                        <br />
+                         <div style="float: left; width: 100%;">
+
+                            <img src="{BannerImage}" width="100%" height="80px" />
+
+                        </div>
+                        <br />
+                        <br />
+                    </div>
+                    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 hidden-sm hidden-md hidden-lg hidden-xl">
+                        <div class="sign-form">
+                            <div class="sign-inner">
+                                <h3 class="first-child">Sign In To Your Account</h3>
+                                <hr>
+
+                                <!--Error Msg -->
+                                <div class="form-group has-error">
+                                    <span class="help-block" id="errormsg" data-bind="text: AjaxErrorMessage"></span>
+                                </div>
+                                
+<form action="/Homeye" method="post"><input name="__RequestVerificationToken" type="hidden" value="OnjK6aYtUnBcAmtNqtdgwzsV96hsf25XriCZU7BVc22TePZ523d7T4YHF6nUzNTI1hyWuHeGMm8EEl8I8XLCgZuDk1LeLJnd8qAPNfxnQrw1" />                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        <input type="text" title="" data-original-title="" placeholder="UserName" autofocus="autofocus" class="form-control" data-bind="value: UserName">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                        <input type="password" title="" data-original-title="" placeholder="Password" class="form-control" data-bind="value: Password">
+                                    </div>
+                                    <br />
+								
+                                      <input type="button" id="btnSub1" value="Sign In" style="background-color:{SignInButtoncolor};" />  
+                                    <img data-bind="visible: DisplayAjaxIndicator" class="" src="/Images/ajax-loader.gif" />
+                                    <hr>
+</form>                                
+                                <p>Not registered? <a href='#'>Create an account.</a></p>
+                                <div class="pwd-lost">
+                                    <div>Lost your password? <a href="#" target="_blank" >Click here to recover.</a></div>
+                                </div>
+                                <!-- / .pwd-lost -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- / .row -->
+        </div>
+    </div>
+</div>
+<script src="/Scripts/ViewModel/HomEyeSignInVM.js"></script>
+
+    
+ <footer id="footer" class="clearfix hidden-xs">
+        <div class="container">
+            <div class="row" style="color:{FooterTextColor};">
+                
+                <br />
+                <div class="col-md-3">
+                    <center>
+                <a href="{Footer1URL}" target="_blank">
+                  <img src="{Footer1Image}" width="30%" alt="...">
+                </a>
+                  <br>
+                  <h3 class="footertext" style="font-size:1.3em;">{Footer1Text}</h3>
+                
+                </center>
+                </div>
+                <div class="col-md-3">
+                    <center>
+                <a href="{Footer2URL}" target="_blank">
+                  <img src="{Footer2Image}" width="30%" alt="...">
+                </a>
+                  <br>
+                  <h3 class="footertext" style="font-size:1.3em;">{Footer2Text}</h3>
+         
+                </center>
+                </div>
+                <div class="col-md-3">
+                    <center>
+                <a href="{Footer3URL}" target="_blank">
+                  <img src="{Footer3Image}" width="30%" alt="...">
+                </a>
+                  <br>
+                  <h3 class="footertext" style="font-size:1.3em;">{Footer3Text}</h3>
+            
+                </center>
+                </div>
+
+				 <div class="col-md-3">
+                    <center>
+                <a href="{Footer3URL}" target="_blank">
+                  <img src="{Footer3Image}" width="30%" alt="...">
+                </a>
+                  <br>
+                  <h3 class="footertext" style="font-size:1.3em;">{Footer3Text}</h3>
+            
+                </center>
+
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Copyright -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="copyright">
+                    © Copyright CSL DualCom 2018 | All Rights Reserved
+                </div>
+            </div>
+        </div>
+        <!-- / .row -->
+    </div>
+    <!-- / .container -->
+
+

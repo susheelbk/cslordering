@@ -1,0 +1,55 @@
+USE [ARC_Ordering]
+GO
+
+/****** Object:  Table [dbo].[Order_FailedDevices]    Script Date: 04/23/2013 12:39:43 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Order_FailedDevices](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[OrderID] [int] NOT NULL,
+	[OrderItemID] [int] NOT NULL,
+	[OrderItemDetailId] [int] NOT NULL,
+	[ProductID] [int] NOT NULL,
+	[Dev_ARCCode] [varchar](10) NULL,
+	[Dev_Code] [nvarchar](22) NULL,
+	[Dev_Connect_Number] [nvarchar](20) NULL,
+	[Dev_IPAddress] [nvarchar](20) NULL,
+	[Dev_PSTN_Number] [nvarchar](20) NULL,
+	[Dev_PrimaryPS] [varchar](10) NULL,
+	[Dev_SecondaryPS] [varchar](10) NULL,
+	[Dev_Type] [varchar](10) NULL,
+	[Dev_CTN_Number] [varchar](30) NULL,
+	[Dev_IMSINumber] [varchar](30) NULL,
+	[Dev_DataBundle] [varchar](30) NULL,
+	[Dev_Sim_Supplier] [varchar](30) NULL,
+	[Dev_Hardware] [varchar](30) NULL,
+	[Dev_TariffCode] [varchar](30) NULL,
+	[Dev_TariffType] [varchar](30) NULL,
+	[FailReason] [varchar](200) NULL,
+	[IsDeleted] [bit] NOT NULL,
+	[CreatedOn] [datetime] NULL,
+	[CreatedBy] [varchar](50) NULL,
+	[ModifiedOn] [datetime] NULL,
+	[ModifiedBy] [varchar](50) NULL,
+ CONSTRAINT [PK_Order_FailedDevices] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[Order_FailedDevices] ADD  CONSTRAINT [DF_Order_FailedDevices_IsDeleted]  DEFAULT ((0)) FOR [IsDeleted]
+GO
+
+

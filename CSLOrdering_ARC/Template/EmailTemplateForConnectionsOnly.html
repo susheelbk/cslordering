@@ -1,0 +1,247 @@
+﻿<!--/*SC*//*SC*/doctype html/*EC*//*EC*/-->
+<html>
+<head>
+<meta charset="utf-8">
+	<!--/*SC*//*SC*/CSS link contains FontFamily Museo Sans 100/300/500/*EC*//*EC*/-->
+	<!--/*SC*/defang_link defang_href="CLS_email.css" defang_rel="stylesheet"/*EC*/-->
+	<style type="text/css">
+		body { padding:0; margin:0;  }
+		.container { background: #e31522; padding:50px; margin:0; font-family: 'Museo Sans 100'; font-weight: normal; font-size: 12px; color: white; }
+		h1 { color: white; font-size: 30px; padding: 0; margin: 0; }
+		h2 { color: white; font-size: 14px; font-weight: normal; }
+		a { color: white; }
+		a:hover { color: yellow; text-decoration: none; }
+		td { border-color: #FC5F6A; color: #BBB; padding: 0; margin: 0; }
+		.order { border: solid 8px #e62a36; }
+		.order h3 { color: white; margin-top: 5px; margin-bottom: 5px; }
+		.order p { padding-left: 15px; position: left; margin-top: 5px; margin-bottom: 5px; }
+		.order font { font-family: 'Museo Sans 100'; font-weight: normal; font-size: 12px; padding-left: 15px; }
+	
+	
+
+</style>
+</head>
+
+<body>
+	<table class="container">
+		<tr>
+			<td>
+                <table style="width: 750px; padding: 10px;" >
+                    <tr>
+                        <td valign="bottom">
+                            <h1 style="display:block;float:left;">Order Confirmation</h1>
+                        </td>
+                        <td valign="bottom">
+                            <img style="display:block;float:right;" src="CSL_logo.png" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="padding-top:25px">
+                            <img src="DigiAir-Connected-hero-image-v4.jpg" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <h2>
+                                Thank you for purchasing ARC Connection Only. All information regarding your order can be viewed below. <br />
+                                To view or download the quick guide for installation, {InstallationURL}
+                            </h2>
+                        </td>
+                    </tr>
+                </table>
+				<table width="750px" class="order" cellspacing="0" cellpadding="5px">
+					<tr>
+						<td style="border-top:solid 1px #FC5F6A;border-bottom:solid 1px #FC5F6A;border-left:solid 1px #FC5F6A;" colspan="2" align="middle" >
+							<h3>Order Details</h3>
+						</td>
+						<td style="border:solid 1px #FC5F6A;" colspan="2" align="middle">
+							<h3>Order From</h3>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" style="border-left:solid 1px #FC5F6A;">
+							<p></p>
+						</td>
+						<td style="border-left:solid 1px #FC5F6A;">
+							<p>ARC :</p>
+						</td>
+						<td style="border-right:solid 1px #FC5F6A;">
+							<font>{ARC}</font>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-left:solid 1px #FC5F6A;">
+							<p>Order No :</p>
+						</td>
+						<td>
+							<font>{OrderNo}</font>
+						</td>
+						<td style="border-left:solid 1px #FC5F6A;">
+							<p>Fax :</p>
+						</td>
+						<td style="border-right:solid 1px #FC5F6A;">
+							<font>{Fax}</font>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-left:solid 1px #FC5F6A;">
+							<p>Order Date :</p>
+						</td>
+						<td>
+							<font>{OrderDate}</font>
+						</td>
+						<td style="border-left:solid 1px #FC5F6A;">
+							<p>Tel :</p>
+						</td>
+						<td style="border-right:solid 1px #FC5F6A;">
+							<font>{Tel}</font>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-left:solid 1px #FC5F6A;">
+							<p>Order Ref# :</p>
+						</td>
+						<td>
+							<font>{OrderRef}</font>
+						</td>
+						<td style="border-left:solid 1px #FC5F6A;">
+							<p>Username :</p>
+						</td>
+						<td style="border-right:solid 1px #FC5F6A;">
+							<font>{Username}</font>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" style="border-left:solid 1px #FC5F6A;">
+							<p></p>
+						</td>
+						<td style="border-left:solid 1px #FC5F6A;">
+							<p>User Email :</p>
+						</td>
+						<td style="border-right:solid 1px #FC5F6A;">
+							<font>{UserEmail}</font>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4" style="padding-top:5px;padding-bottom:5px;border-top:solid 1px #FC5F6A;border-left:solid 1px #FC5F6A;border-right:solid 1px #FC5F6A;">
+							<font>{HeadingInstallerAdd} {InstallerAddress}</font>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-top:solid 1px #FC5F6A;border-left:solid 1px #FC5F6A;" colspan="2" align="middle">
+							<h3>Installer</h3>
+						</td>
+						<td style="border-top:solid 1px #FC5F6A;border-right:solid 1px #FC5F6A;" colspan="2" align="middle">
+							<h3>Deliver To</h3>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-top:5px;padding-bottom:5px;border-top:solid 1px #FC5F6A;border-bottom:solid 1px #FC5F6A;border-left:solid 1px #FC5F6A;" colspan="2">
+							<font>{Installer}</font>
+						</td>
+						<td style="padding-top:5px;padding-bottom:5px;border:solid 1px #FC5F6A;" colspan="2">
+							<font>{DeliveredTo}</font>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-left:solid 1px #FC5F6A;border-right:solid 1px #FC5F6A;" colspan="4" align="middle">
+							<h3>Order Details</h3>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4" style="padding-top:5px;padding-bottom:5px;border-left:solid 1px #FC5F6A;border-right:solid 1px #FC5F6A;">
+							<font>{ProductList}</font>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="4" style="border-bottom:solid 3px #FC5F6A;" align="middle">
+							<div style="display:table;width:100%;table-layout:fixed;">
+								<div style="display:table-cell;border-left:solid 1px #FC5F6A;">
+									<h2>Product Code</h2>
+								</div>
+								<div style="display:table-cell;">
+									<h2>Product Name</h2>
+								</div>
+								<div style="display:table-cell;">
+									<h2>Quantity</h2>
+								</div>
+								<div style="display:table-cell;">
+									<h2>Unit Price</h2>
+								</div>
+								<div style="display:table-cell;border-right:solid 1px #FC5F6A;">
+									<h2>Chip Number</h2>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-top:15px;border-bottom:solid 1px #FC5F6A;border-left:solid 1px #FC5F6A;" colspan="2" align="middle">
+							<h3>Delivery Type</h3>
+						</td>
+						<td style="padding-top:15px;border-bottom:solid 1px #FC5F6A;border-left:solid 1px #FC5F6A;border-right:solid 1px #FC5F6A;" colspan="2" align="middle">
+							<h3>Order Total Details</h3>
+						</td>
+					</tr>
+					<tr>
+						<td rowspan="4" style="border-left:solid 1px #FC5F6A;">
+							<font>{DeliveryTypeName} :</font>
+						</td>
+						<td rowspan="4">
+							<font>{DeliveryTypePrice}</font>
+						</td>
+						<td style="border-left:solid 1px #FC5F6A;">
+							<p>Order Total (exc VAT) :</p>
+						</td>
+						<td style="border-right:solid 1px #FC5F6A;">
+							<font>{OrderTotal}</font>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-left:solid 1px #FC5F6A;">
+							<p>Delivery Total :</p>
+						</td>
+						<td style="border-right:solid 1px #FC5F6A;">
+							<font>{DeliveryTotal}</font>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-left:solid 1px #FC5F6A;">
+							<p>VAT :</p>
+						</td>
+						<td style="border-right:solid 1px #FC5F6A;">
+							<font>{VAT}</font>
+						</td>
+					</tr>
+					<tr>
+						<td style="border-left:solid 1px #FC5F6A;">
+							<p>Total To Pay :</p>
+						</td>
+						<td style="border-right:solid 1px #FC5F6A;">
+							<font>{TotalToPay}</font>
+						</td>
+					</tr>
+					<tr>
+						<td style="padding-bottom:5px;border-top:solid 3px #FC5F6A;border-bottom:solid 1px #FC5F6A;border-left:solid 1px #FC5F6A;border-right:solid 1px #FC5F6A;" colspan="4">
+							<h3 style="padding-left:15px;">Special Instructions</h3>
+							<font>{SpecialInstructions}</font>
+						</td>
+					</tr>
+					
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td style="diplay:block;float:left;width:350px;color:white;">
+				<p>CSL DualCom Limited<br/>
+					Salamander Quay West, Park Lane, Harefield,<br/>
+					Middlesex, UB9 6NZ, UK<br/>
+					Tel: +44 (0)1895 474 474 Fax: +44 (0)1895 474 440<br/>
+					Email: <a href="mailto:orders@csldual.com">orders@csldual.com</a></p>
+			</td>
+			<td style="diplay:block;float:right;width:350px;margin-right:5px;text-align:right;color:white;">
+				<p>Registered in England No. 03155883</p>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

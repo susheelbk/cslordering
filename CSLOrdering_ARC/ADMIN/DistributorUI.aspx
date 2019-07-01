@@ -316,6 +316,27 @@
                                                 <td>&nbsp;
                                                 </td>
                                             </tr>
+                                             <tr>
+                                                <td style="width: 30%" align="left">
+                                                    <label>
+                                                        Default Page To Navigate</label>
+                                                </td>
+                                                <td align="left">                                                   
+                                                    <asp:DropDownList ID="drpDefaultPageToNavigate" runat="server" Width="200px">                                                        
+                                                        <asp:ListItem Text="Dashboard" Value="Dashboard"></asp:ListItem>
+                                                        <asp:ListItem Text="Activate" Value="Activate"></asp:ListItem>
+                                                        <asp:ListItem Text="Buy" Value="Buy"></asp:ListItem>
+                                                    </asp:DropDownList>
+                                                   
+                                               
+                                            
+                                                </td>
+                                            
+                                            </tr>
+                                             <tr>
+                                                <td>&nbsp;
+                                                </td>
+                                            </tr>
                                               <tr>
                                                 <td colspan="2">
                                                     <table style="border-width: thin;border-spacing: 0px;border-style: none;border-color: black;" >
@@ -342,6 +363,8 @@
                                                                 <asp:Image ID="imgFooter4Image" runat="server" BorderColor="Black" BorderStyle="Dotted" BorderWidth="1" Width="64px" Height="64px" />
                                                             </td>
                                                           </tr>
+
+                                                          
                                                         <tr style="border: 1px solid black;">
                                                             <td style="border: 1px solid black;"><b> Text</b></td>
                                                             <td style="border: 1px solid black;"> <asp:TextBox ID="txtFooter1Text" runat="server"  Width="200px"></asp:TextBox></td>

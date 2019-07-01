@@ -630,6 +630,8 @@ public partial class ADMIN_AdministratorUI : System.Web.UI.Page
         txtSignUpHyperlinkcolor.Text = distributer.SignUpHyperlinkcolor;
         drpDefaultPageToNavigate.SelectedValue = distributer.PagetoNavigateafterSignin;
 
+        // drpDefaultPageToNavigate.SelectedValue = distributer.PagetoNavigateafterSignin;
+
         txtSignInButtoncolor.Text = distributer.SignInButtoncolor;
         txtFooterTextColor.Text = distributer.FooterTextColor;
         txtFooterBgColor.Text = distributer.FooterBgColor;

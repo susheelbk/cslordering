@@ -33,7 +33,7 @@ namespace CSLOrderingARCBAL.BAL
 
         public void SaveDistributor(DistributerUIDetail distributer)
         {
-            CSLOrderingARCBAL.LinqToSqlDataContext  db = new CSLOrderingARCBAL.LinqToSqlDataContext();
+            CSLOrderingARCBAL.LinqToSqlDataContext db = new CSLOrderingARCBAL.LinqToSqlDataContext();
             DistributerUIDetail distributerObject = new DistributerUIDetail();
             if (distributer.ID != -1)
             {
@@ -42,40 +42,43 @@ namespace CSLOrderingARCBAL.BAL
                 if (distributerObject != null)
                 {
                     // distributerObject = new DistributerUIDetail();
-                    if(!string.IsNullOrEmpty(distributer.Footer1Image))
-                    distributerObject.Footer1Image = distributer.Footer1Image;
+                    if (!string.IsNullOrEmpty(distributer.Footer1Image))
+                        distributerObject.Footer1Image = distributer.Footer1Image;
 
                     distributerObject.Footer1Text = distributer.Footer1Text;
                     distributerObject.Footer1URL = distributer.Footer1URL;
 
-                    if(!string.IsNullOrEmpty(distributer.Footer2Image))
-                    distributerObject.Footer2Image = distributer.Footer2Image;
+                    if (!string.IsNullOrEmpty(distributer.Footer2Image))
+                        distributerObject.Footer2Image = distributer.Footer2Image;
 
                     distributerObject.Footer2Text = distributer.Footer2Text;
                     distributerObject.Footer2URL = distributer.Footer2URL;
 
-                    if(!string.IsNullOrEmpty(distributer.Footer3Image))
-                    distributerObject.Footer3Image = distributer.Footer3Image;
+                    if (!string.IsNullOrEmpty(distributer.Footer3Image))
+                        distributerObject.Footer3Image = distributer.Footer3Image;
 
                     distributerObject.Footer3Text = distributer.Footer3Text;
                     distributerObject.Footer3URL = distributer.Footer3URL;
 
-                    if(!string.IsNullOrEmpty(distributer.Footer4Image))
-                    distributerObject.Footer4Image = distributer.Footer4Image;
+                    if (!string.IsNullOrEmpty(distributer.Footer4Image))
+                        distributerObject.Footer4Image = distributer.Footer4Image;
 
                     distributerObject.Footer4Text = distributer.Footer4Text;
                     distributerObject.Footer4URL = distributer.Footer4URL;
                     distributerObject.FooterBgColor = distributer.FooterBgColor;
                     distributerObject.FooterTextColor = distributer.FooterTextColor;
 
-                    if(!string.IsNullOrEmpty(distributer.HeaderImage))
-                    distributerObject.HeaderImage = distributer.HeaderImage;
+                    if (!string.IsNullOrEmpty(distributer.HeaderImage))
+                        distributerObject.HeaderImage = distributer.HeaderImage;
 
-                    if(!string.IsNullOrEmpty(distributer.MainImage))
-                    distributerObject.MainImage = distributer.MainImage;
+                    if (!string.IsNullOrEmpty(distributer.MainImage))
+                        distributerObject.MainImage = distributer.MainImage;
 
-                    if(!string.IsNullOrEmpty(distributer.BannerImage))
-                    distributerObject.BannerImage = distributer.BannerImage;
+                    if (!string.IsNullOrEmpty(distributer.BannerImage))
+                        distributerObject.BannerImage = distributer.BannerImage;
+
+                    if (!string.IsNullOrEmpty(distributer.PagetoNavigateafterSignin))
+                        distributerObject.PagetoNavigateafterSignin = distributer.PagetoNavigateafterSignin;
 
                     distributerObject.SignInButtoncolor = distributer.SignInButtoncolor;
                     distributerObject.SignUpHyperlinkcolor = distributer.SignUpHyperlinkcolor;
@@ -107,6 +110,7 @@ namespace CSLOrderingARCBAL.BAL
                 distributerObject.SignInButtoncolor = distributer.SignInButtoncolor;
                 distributerObject.SignUpHyperlinkcolor = distributer.SignUpHyperlinkcolor;
                 distributerObject.UrlName = distributer.UrlName;
+                distributerObject.PagetoNavigateafterSignin = distributer.PagetoNavigateafterSignin;
                 distributer.Active = false;
 
                 db.DistributerUIDetails.InsertOnSubmit(distributerObject);

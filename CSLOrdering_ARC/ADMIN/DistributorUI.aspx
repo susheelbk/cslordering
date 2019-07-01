@@ -327,7 +327,7 @@
                                                         <asp:ListItem Text="Activate" Value="Activate"></asp:ListItem>
                                                         <asp:ListItem Text="Buy" Value="Buy"></asp:ListItem>
                                                     </asp:DropDownList>
-                                                   
+                                                   <!-- can be removed-->
                                                
                                             
                                                 </td>

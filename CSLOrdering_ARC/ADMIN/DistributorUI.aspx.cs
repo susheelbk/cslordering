@@ -470,6 +470,7 @@ public partial class ADMIN_AdministratorUI : System.Web.UI.Page
         distributer.Footer4URL = txtFooter4URL.Text;
         distributer.FooterBgColor = string.IsNullOrEmpty(txtFooterBgColor.Text)?ConfigurationManager.AppSettings["DefaultFooterBgColor"].ToString(): txtFooterBgColor.Text;
         distributer.FooterTextColor = string.IsNullOrEmpty(txtFooterTextColor.Text)?ConfigurationManager.AppSettings["DefaultFooterTextColor"].ToString(): txtFooterTextColor.Text;
+        distributer.PagetoNavigateafterSignin = drpDefaultPageToNavigate.SelectedValue;
 
         if (fuHeaderImage.HasFile)
         {
@@ -627,6 +628,9 @@ public partial class ADMIN_AdministratorUI : System.Web.UI.Page
 
 
         txtSignUpHyperlinkcolor.Text = distributer.SignUpHyperlinkcolor;
+        drpDefaultPageToNavigate.SelectedValue = distributer.PagetoNavigateafterSignin;
+
+        // drpDefaultPageToNavigate.SelectedValue = distributer.PagetoNavigateafterSignin;
 
         txtSignInButtoncolor.Text = distributer.SignInButtoncolor;
         txtFooterTextColor.Text = distributer.FooterTextColor;

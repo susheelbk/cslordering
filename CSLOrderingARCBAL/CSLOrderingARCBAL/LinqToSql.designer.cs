@@ -22,7 +22,7 @@ namespace CSLOrderingARCBAL
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ARC_Ordering")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Dev_ARCOrdering")]
 	public partial class LinqToSqlDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -183,9 +183,6 @@ namespace CSLOrderingARCBAL
     partial void InsertBandNameMaster(BandNameMaster instance);
     partial void UpdateBandNameMaster(BandNameMaster instance);
     partial void DeleteBandNameMaster(BandNameMaster instance);
-    partial void InsertDistributerUIDetail(DistributerUIDetail instance);
-    partial void UpdateDistributerUIDetail(DistributerUIDetail instance);
-    partial void DeleteDistributerUIDetail(DistributerUIDetail instance);
     partial void InsertDR(DR instance);
     partial void UpdateDR(DR instance);
     partial void DeleteDR(DR instance);
@@ -201,10 +198,13 @@ namespace CSLOrderingARCBAL
     partial void InsertBOS_Device(BOS_Device instance);
     partial void UpdateBOS_Device(BOS_Device instance);
     partial void DeleteBOS_Device(BOS_Device instance);
+    partial void InsertDistributerUIDetail(DistributerUIDetail instance);
+    partial void UpdateDistributerUIDetail(DistributerUIDetail instance);
+    partial void DeleteDistributerUIDetail(DistributerUIDetail instance);
     #endregion
 		
 		public LinqToSqlDataContext() : 
-				base(global::CSLOrderingARCBAL.Properties.Settings.Default.ARC_OrderingConnectionString1, mappingSource)
+				base(global::CSLOrderingARCBAL.Properties.Settings.Default.Dev_ARCOrderingConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -689,14 +689,6 @@ namespace CSLOrderingARCBAL
 			}
 		}
 		
-		public System.Data.Linq.Table<DistributerUIDetail> DistributerUIDetails
-		{
-			get
-			{
-				return this.GetTable<DistributerUIDetail>();
-			}
-		}
-		
 		public System.Data.Linq.Table<vw_TCDStock> vw_TCDStocks
 		{
 			get
@@ -742,6 +734,14 @@ namespace CSLOrderingARCBAL
 			get
 			{
 				return this.GetTable<BOS_Device>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DistributerUIDetail> DistributerUIDetails
+		{
+			get
+			{
+				return this.GetTable<DistributerUIDetail>();
 			}
 		}
 		
@@ -17020,572 +17020,6 @@ namespace CSLOrderingARCBAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DistributerUIDetails")]
-	public partial class DistributerUIDetail : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID;
-		
-		private string _UrlName;
-		
-		private string _HeaderImage;
-		
-		private string _MainImage;
-		
-		private string _FooterBgColor;
-		
-		private string _FooterTextColor;
-		
-		private string _Footer1Image;
-		
-		private string _Footer1Text;
-		
-		private string _Footer1URL;
-		
-		private string _Footer2Image;
-		
-		private string _Footer2Text;
-		
-		private string _Footer2URL;
-		
-		private string _Footer3Image;
-		
-		private string _Footer3Text;
-		
-		private string _Footer3URL;
-		
-		private string _SignInButtoncolor;
-		
-		private string _SignUpHyperlinkcolor;
-		
-		private string _BannerImage;
-		
-		private string _Footer4Image;
-		
-		private string _Footer4Text;
-		
-		private string _Footer4URL;
-		
-		private bool _Active;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDChanging(int value);
-    partial void OnIDChanged();
-    partial void OnUrlNameChanging(string value);
-    partial void OnUrlNameChanged();
-    partial void OnHeaderImageChanging(string value);
-    partial void OnHeaderImageChanged();
-    partial void OnMainImageChanging(string value);
-    partial void OnMainImageChanged();
-    partial void OnFooterBgColorChanging(string value);
-    partial void OnFooterBgColorChanged();
-    partial void OnFooterTextColorChanging(string value);
-    partial void OnFooterTextColorChanged();
-    partial void OnFooter1ImageChanging(string value);
-    partial void OnFooter1ImageChanged();
-    partial void OnFooter1TextChanging(string value);
-    partial void OnFooter1TextChanged();
-    partial void OnFooter1URLChanging(string value);
-    partial void OnFooter1URLChanged();
-    partial void OnFooter2ImageChanging(string value);
-    partial void OnFooter2ImageChanged();
-    partial void OnFooter2TextChanging(string value);
-    partial void OnFooter2TextChanged();
-    partial void OnFooter2URLChanging(string value);
-    partial void OnFooter2URLChanged();
-    partial void OnFooter3ImageChanging(string value);
-    partial void OnFooter3ImageChanged();
-    partial void OnFooter3TextChanging(string value);
-    partial void OnFooter3TextChanged();
-    partial void OnFooter3URLChanging(string value);
-    partial void OnFooter3URLChanged();
-    partial void OnSignInButtoncolorChanging(string value);
-    partial void OnSignInButtoncolorChanged();
-    partial void OnSignUpHyperlinkcolorChanging(string value);
-    partial void OnSignUpHyperlinkcolorChanged();
-    partial void OnBannerImageChanging(string value);
-    partial void OnBannerImageChanged();
-    partial void OnFooter4ImageChanging(string value);
-    partial void OnFooter4ImageChanged();
-    partial void OnFooter4TextChanging(string value);
-    partial void OnFooter4TextChanged();
-    partial void OnFooter4URLChanging(string value);
-    partial void OnFooter4URLChanged();
-    partial void OnActiveChanging(bool value);
-    partial void OnActiveChanged();
-    #endregion
-		
-		public DistributerUIDetail()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID
-		{
-			get
-			{
-				return this._ID;
-			}
-			set
-			{
-				if ((this._ID != value))
-				{
-					this.OnIDChanging(value);
-					this.SendPropertyChanging();
-					this._ID = value;
-					this.SendPropertyChanged("ID");
-					this.OnIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UrlName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string UrlName
-		{
-			get
-			{
-				return this._UrlName;
-			}
-			set
-			{
-				if ((this._UrlName != value))
-				{
-					this.OnUrlNameChanging(value);
-					this.SendPropertyChanging();
-					this._UrlName = value;
-					this.SendPropertyChanged("UrlName");
-					this.OnUrlNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HeaderImage", DbType="VarChar(MAX)")]
-		public string HeaderImage
-		{
-			get
-			{
-				return this._HeaderImage;
-			}
-			set
-			{
-				if ((this._HeaderImage != value))
-				{
-					this.OnHeaderImageChanging(value);
-					this.SendPropertyChanging();
-					this._HeaderImage = value;
-					this.SendPropertyChanged("HeaderImage");
-					this.OnHeaderImageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MainImage", DbType="VarChar(MAX)")]
-		public string MainImage
-		{
-			get
-			{
-				return this._MainImage;
-			}
-			set
-			{
-				if ((this._MainImage != value))
-				{
-					this.OnMainImageChanging(value);
-					this.SendPropertyChanging();
-					this._MainImage = value;
-					this.SendPropertyChanged("MainImage");
-					this.OnMainImageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FooterBgColor", DbType="VarChar(50)")]
-		public string FooterBgColor
-		{
-			get
-			{
-				return this._FooterBgColor;
-			}
-			set
-			{
-				if ((this._FooterBgColor != value))
-				{
-					this.OnFooterBgColorChanging(value);
-					this.SendPropertyChanging();
-					this._FooterBgColor = value;
-					this.SendPropertyChanged("FooterBgColor");
-					this.OnFooterBgColorChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FooterTextColor", DbType="VarChar(50)")]
-		public string FooterTextColor
-		{
-			get
-			{
-				return this._FooterTextColor;
-			}
-			set
-			{
-				if ((this._FooterTextColor != value))
-				{
-					this.OnFooterTextColorChanging(value);
-					this.SendPropertyChanging();
-					this._FooterTextColor = value;
-					this.SendPropertyChanged("FooterTextColor");
-					this.OnFooterTextColorChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer1Image", DbType="VarChar(MAX)")]
-		public string Footer1Image
-		{
-			get
-			{
-				return this._Footer1Image;
-			}
-			set
-			{
-				if ((this._Footer1Image != value))
-				{
-					this.OnFooter1ImageChanging(value);
-					this.SendPropertyChanging();
-					this._Footer1Image = value;
-					this.SendPropertyChanged("Footer1Image");
-					this.OnFooter1ImageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer1Text", DbType="VarChar(MAX)")]
-		public string Footer1Text
-		{
-			get
-			{
-				return this._Footer1Text;
-			}
-			set
-			{
-				if ((this._Footer1Text != value))
-				{
-					this.OnFooter1TextChanging(value);
-					this.SendPropertyChanging();
-					this._Footer1Text = value;
-					this.SendPropertyChanged("Footer1Text");
-					this.OnFooter1TextChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer1URL", DbType="VarChar(MAX)")]
-		public string Footer1URL
-		{
-			get
-			{
-				return this._Footer1URL;
-			}
-			set
-			{
-				if ((this._Footer1URL != value))
-				{
-					this.OnFooter1URLChanging(value);
-					this.SendPropertyChanging();
-					this._Footer1URL = value;
-					this.SendPropertyChanged("Footer1URL");
-					this.OnFooter1URLChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer2Image", DbType="VarChar(MAX)")]
-		public string Footer2Image
-		{
-			get
-			{
-				return this._Footer2Image;
-			}
-			set
-			{
-				if ((this._Footer2Image != value))
-				{
-					this.OnFooter2ImageChanging(value);
-					this.SendPropertyChanging();
-					this._Footer2Image = value;
-					this.SendPropertyChanged("Footer2Image");
-					this.OnFooter2ImageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer2Text", DbType="VarChar(MAX)")]
-		public string Footer2Text
-		{
-			get
-			{
-				return this._Footer2Text;
-			}
-			set
-			{
-				if ((this._Footer2Text != value))
-				{
-					this.OnFooter2TextChanging(value);
-					this.SendPropertyChanging();
-					this._Footer2Text = value;
-					this.SendPropertyChanged("Footer2Text");
-					this.OnFooter2TextChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer2URL", DbType="VarChar(MAX)")]
-		public string Footer2URL
-		{
-			get
-			{
-				return this._Footer2URL;
-			}
-			set
-			{
-				if ((this._Footer2URL != value))
-				{
-					this.OnFooter2URLChanging(value);
-					this.SendPropertyChanging();
-					this._Footer2URL = value;
-					this.SendPropertyChanged("Footer2URL");
-					this.OnFooter2URLChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer3Image", DbType="VarChar(MAX)")]
-		public string Footer3Image
-		{
-			get
-			{
-				return this._Footer3Image;
-			}
-			set
-			{
-				if ((this._Footer3Image != value))
-				{
-					this.OnFooter3ImageChanging(value);
-					this.SendPropertyChanging();
-					this._Footer3Image = value;
-					this.SendPropertyChanged("Footer3Image");
-					this.OnFooter3ImageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer3Text", DbType="VarChar(MAX)")]
-		public string Footer3Text
-		{
-			get
-			{
-				return this._Footer3Text;
-			}
-			set
-			{
-				if ((this._Footer3Text != value))
-				{
-					this.OnFooter3TextChanging(value);
-					this.SendPropertyChanging();
-					this._Footer3Text = value;
-					this.SendPropertyChanged("Footer3Text");
-					this.OnFooter3TextChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer3URL", DbType="VarChar(MAX)")]
-		public string Footer3URL
-		{
-			get
-			{
-				return this._Footer3URL;
-			}
-			set
-			{
-				if ((this._Footer3URL != value))
-				{
-					this.OnFooter3URLChanging(value);
-					this.SendPropertyChanging();
-					this._Footer3URL = value;
-					this.SendPropertyChanged("Footer3URL");
-					this.OnFooter3URLChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SignInButtoncolor", DbType="VarChar(50)")]
-		public string SignInButtoncolor
-		{
-			get
-			{
-				return this._SignInButtoncolor;
-			}
-			set
-			{
-				if ((this._SignInButtoncolor != value))
-				{
-					this.OnSignInButtoncolorChanging(value);
-					this.SendPropertyChanging();
-					this._SignInButtoncolor = value;
-					this.SendPropertyChanged("SignInButtoncolor");
-					this.OnSignInButtoncolorChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SignUpHyperlinkcolor", DbType="VarChar(50)")]
-		public string SignUpHyperlinkcolor
-		{
-			get
-			{
-				return this._SignUpHyperlinkcolor;
-			}
-			set
-			{
-				if ((this._SignUpHyperlinkcolor != value))
-				{
-					this.OnSignUpHyperlinkcolorChanging(value);
-					this.SendPropertyChanging();
-					this._SignUpHyperlinkcolor = value;
-					this.SendPropertyChanged("SignUpHyperlinkcolor");
-					this.OnSignUpHyperlinkcolorChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BannerImage", DbType="VarChar(MAX)")]
-		public string BannerImage
-		{
-			get
-			{
-				return this._BannerImage;
-			}
-			set
-			{
-				if ((this._BannerImage != value))
-				{
-					this.OnBannerImageChanging(value);
-					this.SendPropertyChanging();
-					this._BannerImage = value;
-					this.SendPropertyChanged("BannerImage");
-					this.OnBannerImageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer4Image", DbType="VarChar(MAX)")]
-		public string Footer4Image
-		{
-			get
-			{
-				return this._Footer4Image;
-			}
-			set
-			{
-				if ((this._Footer4Image != value))
-				{
-					this.OnFooter4ImageChanging(value);
-					this.SendPropertyChanging();
-					this._Footer4Image = value;
-					this.SendPropertyChanged("Footer4Image");
-					this.OnFooter4ImageChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer4Text", DbType="VarChar(MAX)")]
-		public string Footer4Text
-		{
-			get
-			{
-				return this._Footer4Text;
-			}
-			set
-			{
-				if ((this._Footer4Text != value))
-				{
-					this.OnFooter4TextChanging(value);
-					this.SendPropertyChanging();
-					this._Footer4Text = value;
-					this.SendPropertyChanged("Footer4Text");
-					this.OnFooter4TextChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer4URL", DbType="VarChar(MAX)")]
-		public string Footer4URL
-		{
-			get
-			{
-				return this._Footer4URL;
-			}
-			set
-			{
-				if ((this._Footer4URL != value))
-				{
-					this.OnFooter4URLChanging(value);
-					this.SendPropertyChanging();
-					this._Footer4URL = value;
-					this.SendPropertyChanged("Footer4URL");
-					this.OnFooter4URLChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Bit NOT NULL")]
-		public bool Active
-		{
-			get
-			{
-				return this._Active;
-			}
-			set
-			{
-				if ((this._Active != value))
-				{
-					this.OnActiveChanging(value);
-					this.SendPropertyChanging();
-					this._Active = value;
-					this.SendPropertyChanged("Active");
-					this.OnActiveChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vw_TCDStock")]
 	public partial class vw_TCDStock
 	{
@@ -21048,6 +20482,596 @@ namespace CSLOrderingARCBAL
 					this._Dev_Post_Code = value;
 					this.SendPropertyChanged("Dev_Post_Code");
 					this.OnDev_Post_CodeChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DistributerUIDetails")]
+	public partial class DistributerUIDetail : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _UrlName;
+		
+		private string _HeaderImage;
+		
+		private string _MainImage;
+		
+		private string _FooterBgColor;
+		
+		private string _FooterTextColor;
+		
+		private string _Footer1Image;
+		
+		private string _Footer1Text;
+		
+		private string _Footer1URL;
+		
+		private string _Footer2Image;
+		
+		private string _Footer2Text;
+		
+		private string _Footer2URL;
+		
+		private string _Footer3Image;
+		
+		private string _Footer3Text;
+		
+		private string _Footer3URL;
+		
+		private string _SignInButtoncolor;
+		
+		private string _SignUpHyperlinkcolor;
+		
+		private string _BannerImage;
+		
+		private string _Footer4Image;
+		
+		private string _Footer4Text;
+		
+		private string _Footer4URL;
+		
+		private bool _Active;
+		
+		private string _PagetoNavigateafterSignin;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnUrlNameChanging(string value);
+    partial void OnUrlNameChanged();
+    partial void OnHeaderImageChanging(string value);
+    partial void OnHeaderImageChanged();
+    partial void OnMainImageChanging(string value);
+    partial void OnMainImageChanged();
+    partial void OnFooterBgColorChanging(string value);
+    partial void OnFooterBgColorChanged();
+    partial void OnFooterTextColorChanging(string value);
+    partial void OnFooterTextColorChanged();
+    partial void OnFooter1ImageChanging(string value);
+    partial void OnFooter1ImageChanged();
+    partial void OnFooter1TextChanging(string value);
+    partial void OnFooter1TextChanged();
+    partial void OnFooter1URLChanging(string value);
+    partial void OnFooter1URLChanged();
+    partial void OnFooter2ImageChanging(string value);
+    partial void OnFooter2ImageChanged();
+    partial void OnFooter2TextChanging(string value);
+    partial void OnFooter2TextChanged();
+    partial void OnFooter2URLChanging(string value);
+    partial void OnFooter2URLChanged();
+    partial void OnFooter3ImageChanging(string value);
+    partial void OnFooter3ImageChanged();
+    partial void OnFooter3TextChanging(string value);
+    partial void OnFooter3TextChanged();
+    partial void OnFooter3URLChanging(string value);
+    partial void OnFooter3URLChanged();
+    partial void OnSignInButtoncolorChanging(string value);
+    partial void OnSignInButtoncolorChanged();
+    partial void OnSignUpHyperlinkcolorChanging(string value);
+    partial void OnSignUpHyperlinkcolorChanged();
+    partial void OnBannerImageChanging(string value);
+    partial void OnBannerImageChanged();
+    partial void OnFooter4ImageChanging(string value);
+    partial void OnFooter4ImageChanged();
+    partial void OnFooter4TextChanging(string value);
+    partial void OnFooter4TextChanged();
+    partial void OnFooter4URLChanging(string value);
+    partial void OnFooter4URLChanged();
+    partial void OnActiveChanging(bool value);
+    partial void OnActiveChanged();
+    partial void OnPagetoNavigateafterSigninChanging(string value);
+    partial void OnPagetoNavigateafterSigninChanged();
+    #endregion
+		
+		public DistributerUIDetail()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UrlName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string UrlName
+		{
+			get
+			{
+				return this._UrlName;
+			}
+			set
+			{
+				if ((this._UrlName != value))
+				{
+					this.OnUrlNameChanging(value);
+					this.SendPropertyChanging();
+					this._UrlName = value;
+					this.SendPropertyChanged("UrlName");
+					this.OnUrlNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HeaderImage", DbType="VarChar(MAX)")]
+		public string HeaderImage
+		{
+			get
+			{
+				return this._HeaderImage;
+			}
+			set
+			{
+				if ((this._HeaderImage != value))
+				{
+					this.OnHeaderImageChanging(value);
+					this.SendPropertyChanging();
+					this._HeaderImage = value;
+					this.SendPropertyChanged("HeaderImage");
+					this.OnHeaderImageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MainImage", DbType="VarChar(MAX)")]
+		public string MainImage
+		{
+			get
+			{
+				return this._MainImage;
+			}
+			set
+			{
+				if ((this._MainImage != value))
+				{
+					this.OnMainImageChanging(value);
+					this.SendPropertyChanging();
+					this._MainImage = value;
+					this.SendPropertyChanged("MainImage");
+					this.OnMainImageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FooterBgColor", DbType="VarChar(50)")]
+		public string FooterBgColor
+		{
+			get
+			{
+				return this._FooterBgColor;
+			}
+			set
+			{
+				if ((this._FooterBgColor != value))
+				{
+					this.OnFooterBgColorChanging(value);
+					this.SendPropertyChanging();
+					this._FooterBgColor = value;
+					this.SendPropertyChanged("FooterBgColor");
+					this.OnFooterBgColorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FooterTextColor", DbType="VarChar(50)")]
+		public string FooterTextColor
+		{
+			get
+			{
+				return this._FooterTextColor;
+			}
+			set
+			{
+				if ((this._FooterTextColor != value))
+				{
+					this.OnFooterTextColorChanging(value);
+					this.SendPropertyChanging();
+					this._FooterTextColor = value;
+					this.SendPropertyChanged("FooterTextColor");
+					this.OnFooterTextColorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer1Image", DbType="VarChar(MAX)")]
+		public string Footer1Image
+		{
+			get
+			{
+				return this._Footer1Image;
+			}
+			set
+			{
+				if ((this._Footer1Image != value))
+				{
+					this.OnFooter1ImageChanging(value);
+					this.SendPropertyChanging();
+					this._Footer1Image = value;
+					this.SendPropertyChanged("Footer1Image");
+					this.OnFooter1ImageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer1Text", DbType="VarChar(MAX)")]
+		public string Footer1Text
+		{
+			get
+			{
+				return this._Footer1Text;
+			}
+			set
+			{
+				if ((this._Footer1Text != value))
+				{
+					this.OnFooter1TextChanging(value);
+					this.SendPropertyChanging();
+					this._Footer1Text = value;
+					this.SendPropertyChanged("Footer1Text");
+					this.OnFooter1TextChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer1URL", DbType="VarChar(MAX)")]
+		public string Footer1URL
+		{
+			get
+			{
+				return this._Footer1URL;
+			}
+			set
+			{
+				if ((this._Footer1URL != value))
+				{
+					this.OnFooter1URLChanging(value);
+					this.SendPropertyChanging();
+					this._Footer1URL = value;
+					this.SendPropertyChanged("Footer1URL");
+					this.OnFooter1URLChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer2Image", DbType="VarChar(MAX)")]
+		public string Footer2Image
+		{
+			get
+			{
+				return this._Footer2Image;
+			}
+			set
+			{
+				if ((this._Footer2Image != value))
+				{
+					this.OnFooter2ImageChanging(value);
+					this.SendPropertyChanging();
+					this._Footer2Image = value;
+					this.SendPropertyChanged("Footer2Image");
+					this.OnFooter2ImageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer2Text", DbType="VarChar(MAX)")]
+		public string Footer2Text
+		{
+			get
+			{
+				return this._Footer2Text;
+			}
+			set
+			{
+				if ((this._Footer2Text != value))
+				{
+					this.OnFooter2TextChanging(value);
+					this.SendPropertyChanging();
+					this._Footer2Text = value;
+					this.SendPropertyChanged("Footer2Text");
+					this.OnFooter2TextChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer2URL", DbType="VarChar(MAX)")]
+		public string Footer2URL
+		{
+			get
+			{
+				return this._Footer2URL;
+			}
+			set
+			{
+				if ((this._Footer2URL != value))
+				{
+					this.OnFooter2URLChanging(value);
+					this.SendPropertyChanging();
+					this._Footer2URL = value;
+					this.SendPropertyChanged("Footer2URL");
+					this.OnFooter2URLChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer3Image", DbType="VarChar(MAX)")]
+		public string Footer3Image
+		{
+			get
+			{
+				return this._Footer3Image;
+			}
+			set
+			{
+				if ((this._Footer3Image != value))
+				{
+					this.OnFooter3ImageChanging(value);
+					this.SendPropertyChanging();
+					this._Footer3Image = value;
+					this.SendPropertyChanged("Footer3Image");
+					this.OnFooter3ImageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer3Text", DbType="VarChar(MAX)")]
+		public string Footer3Text
+		{
+			get
+			{
+				return this._Footer3Text;
+			}
+			set
+			{
+				if ((this._Footer3Text != value))
+				{
+					this.OnFooter3TextChanging(value);
+					this.SendPropertyChanging();
+					this._Footer3Text = value;
+					this.SendPropertyChanged("Footer3Text");
+					this.OnFooter3TextChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer3URL", DbType="VarChar(MAX)")]
+		public string Footer3URL
+		{
+			get
+			{
+				return this._Footer3URL;
+			}
+			set
+			{
+				if ((this._Footer3URL != value))
+				{
+					this.OnFooter3URLChanging(value);
+					this.SendPropertyChanging();
+					this._Footer3URL = value;
+					this.SendPropertyChanged("Footer3URL");
+					this.OnFooter3URLChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SignInButtoncolor", DbType="VarChar(50)")]
+		public string SignInButtoncolor
+		{
+			get
+			{
+				return this._SignInButtoncolor;
+			}
+			set
+			{
+				if ((this._SignInButtoncolor != value))
+				{
+					this.OnSignInButtoncolorChanging(value);
+					this.SendPropertyChanging();
+					this._SignInButtoncolor = value;
+					this.SendPropertyChanged("SignInButtoncolor");
+					this.OnSignInButtoncolorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SignUpHyperlinkcolor", DbType="VarChar(50)")]
+		public string SignUpHyperlinkcolor
+		{
+			get
+			{
+				return this._SignUpHyperlinkcolor;
+			}
+			set
+			{
+				if ((this._SignUpHyperlinkcolor != value))
+				{
+					this.OnSignUpHyperlinkcolorChanging(value);
+					this.SendPropertyChanging();
+					this._SignUpHyperlinkcolor = value;
+					this.SendPropertyChanged("SignUpHyperlinkcolor");
+					this.OnSignUpHyperlinkcolorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BannerImage", DbType="VarChar(MAX)")]
+		public string BannerImage
+		{
+			get
+			{
+				return this._BannerImage;
+			}
+			set
+			{
+				if ((this._BannerImage != value))
+				{
+					this.OnBannerImageChanging(value);
+					this.SendPropertyChanging();
+					this._BannerImage = value;
+					this.SendPropertyChanged("BannerImage");
+					this.OnBannerImageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer4Image", DbType="VarChar(MAX)")]
+		public string Footer4Image
+		{
+			get
+			{
+				return this._Footer4Image;
+			}
+			set
+			{
+				if ((this._Footer4Image != value))
+				{
+					this.OnFooter4ImageChanging(value);
+					this.SendPropertyChanging();
+					this._Footer4Image = value;
+					this.SendPropertyChanged("Footer4Image");
+					this.OnFooter4ImageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer4Text", DbType="VarChar(MAX)")]
+		public string Footer4Text
+		{
+			get
+			{
+				return this._Footer4Text;
+			}
+			set
+			{
+				if ((this._Footer4Text != value))
+				{
+					this.OnFooter4TextChanging(value);
+					this.SendPropertyChanging();
+					this._Footer4Text = value;
+					this.SendPropertyChanged("Footer4Text");
+					this.OnFooter4TextChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Footer4URL", DbType="VarChar(MAX)")]
+		public string Footer4URL
+		{
+			get
+			{
+				return this._Footer4URL;
+			}
+			set
+			{
+				if ((this._Footer4URL != value))
+				{
+					this.OnFooter4URLChanging(value);
+					this.SendPropertyChanging();
+					this._Footer4URL = value;
+					this.SendPropertyChanged("Footer4URL");
+					this.OnFooter4URLChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Active", DbType="Bit NOT NULL")]
+		public bool Active
+		{
+			get
+			{
+				return this._Active;
+			}
+			set
+			{
+				if ((this._Active != value))
+				{
+					this.OnActiveChanging(value);
+					this.SendPropertyChanging();
+					this._Active = value;
+					this.SendPropertyChanged("Active");
+					this.OnActiveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PagetoNavigateafterSignin", DbType="NVarChar(500)")]
+		public string PagetoNavigateafterSignin
+		{
+			get
+			{
+				return this._PagetoNavigateafterSignin;
+			}
+			set
+			{
+				if ((this._PagetoNavigateafterSignin != value))
+				{
+					this.OnPagetoNavigateafterSigninChanging(value);
+					this.SendPropertyChanging();
+					this._PagetoNavigateafterSignin = value;
+					this.SendPropertyChanged("PagetoNavigateafterSignin");
+					this.OnPagetoNavigateafterSigninChanged();
 				}
 			}
 		}
